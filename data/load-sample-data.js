@@ -31,7 +31,8 @@ async function loadData() {
     await User.insertMany(users);
     console.log('👍👍👍👍👍👍👍👍 Done!');
     process.exit();
-  } catch(e) {
+  } catch (e) {
+    // eslint-disable-next-line max-len
     console.log('\n👎👎👎👎👎👎👎👎 Error! The Error info is below but if you are importing sample data make sure to drop the existing database first with.\n\n\t npm run blowitallaway\n\n\n');
     console.log(e);
     process.exit();

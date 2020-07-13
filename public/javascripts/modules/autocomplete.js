@@ -1,5 +1,4 @@
 function autocomplete(input, latInput, lngInput) {
-  console.log(input, latInput, lngInput);
   const dropdown = new google.maps.places.Autocomplete(input);
 
   dropdown.addListener('place_changed', () => {
@@ -7,9 +6,9 @@ function autocomplete(input, latInput, lngInput) {
     latInput.value = place.geometry.location.lat();
     lngInput.value = place.geometry.location.lng();
   });
-
+  if (!input) return;
   input.on('keydown', (e) => {
-    if(e.keyCode === 13) e.preventDefault();
+    if (e.keyCode === 13) e.preventDefault();
   });
 }
 
